@@ -8,7 +8,7 @@ import { FormControl, FormsModule,ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-customer-update',
   standalone:true,
-  imports: [CrudNavbarComponent,FormsModule,ReactiveFormsModule],
+  imports: [FormsModule,ReactiveFormsModule],
   templateUrl: './customer-update.component.html',
   styleUrl: './customer-update.component.css'
 })
