@@ -13,6 +13,7 @@ import { ProductReadComponent } from './components/crud/product-read/product-rea
 import { CustomerUpdateComponent } from './components/crud/customer-update/customer-update.component';
 import { CustomerReadComponent } from './components/crud/customer-read/customer-read.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
+import { LearnMoreComponent } from './components/learn-more/learn-more.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,5 +49,6 @@ export const routes: Routes = [
     canActivate: [adminGuard],
   },
   { path: 'not-authorized', component: NotAuthorizedComponent },
+  { path: 'learn-more', component: LearnMoreComponent },
   { path: '**', redirectTo: 'not-authorized' },
 ];

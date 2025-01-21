@@ -43,6 +43,7 @@ export class RegistrationFormComponent {
     success: false,
     message: 'Not attempted yet',
   };
+  errorMessage: string = '';
 
   form = new FormGroup(
     {
@@ -115,13 +116,17 @@ export class RegistrationFormComponent {
         this.router.navigate(['/home']);
       },
       error: (error) => {
-        const code = error.error?.code || 'UnknownError';
-        const message = error.error?.message || 'An unexpected error occurred';
-        alert(error);
+        console.error('Error:', error);
+        this.errorMessage =
+          error.status === 500
+            ? 'Internal Server Error: Please try again.'
+            : error.status === 404
+              ? 'Resource not found: Please check the URL or contact support.'
+              : 'An unexpected error occurred.';
+        alert(this.errorMessage);
         console.error('Error registering customer');
-        // console.error('Error registering customer:', code, message);
 
-        this.registrationStatus = { success: false, message };
+        this.registrationStatus = { success: false, message: this.errorMessage };
         this.router.navigate(['/home']);
       },
     });
@@ -151,5 +156,8 @@ export class RegistrationFormComponent {
       success: false,
       message: 'Not attempted yet',
     };
+  }
+  togglePasswordVisibility(input: HTMLInputElement): void {
+    input.type = input.type === 'password' ? 'text' : 'password';
   }
 }

@@ -1,0 +1,29 @@
+/* Ensure proper spacing for navbar links */
+.navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .icon-link-hover:hover {
+    color: #ffd700; /* Highlight on hover */
+    cursor: pointer;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .navbar-brand {
+      margin-bottom: 10px;
+    }
+  
+    .navbar-nav {
+      text-align: center;
+    }
+  
+    .nav-item {
+      margin-bottom: 5px;
+    }
+  }
+  
