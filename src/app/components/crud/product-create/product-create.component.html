@@ -1,1 +1,118 @@
-<p>product-create works!</p>
+<div class="container mt-5">
+    <h2 class="text-center">Create Product</h2>
+  
+    @if (createProductForm) {
+      <form [formGroup]="createProductForm" class="mt-4">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Product Name</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              class="form-control"
+              placeholder="Enter product name"
+            />
+            @if (createProductForm.get('name')?.invalid && createProductForm.get('name')?.touched) {
+              <div class="text-danger">Product name is required.</div>
+            }
+          </div>
+          <div class="col-md-6">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" formControlName="category" class="form-select">
+              <option value="" disabled>Select a category</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Home Appliances">Home Appliances</option>
+              <option value="Books">Books</option>
+              <option value="Toys">Toys</option>
+              <option value="Beauty Products">Beauty Products</option>
+              <option value="Sports Equipment">Sports Equipment</option>
+            </select>
+          </div>
+          
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+              id="brand"
+              type="text"
+              formControlName="brand"
+              class="form-control"
+              placeholder="Enter product brand"
+            />
+            @if (createProductForm.get('brand')?.invalid && createProductForm.get('brand')?.touched) {
+              <div class="text-danger">Brand is required.</div>
+            }
+          </div>
+          <div class="col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input
+              id="price"
+              type="number"
+              formControlName="price"
+              class="form-control"
+              placeholder="Enter product price"
+            />
+            @if (createProductForm.get('price')?.invalid && createProductForm.get('price')?.touched) {
+              <div class="text-danger">Price is required and must be a number.</div>
+            }
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input
+              id="quantity"
+              type="number"
+              formControlName="quantity"
+              class="form-control"
+              placeholder="Enter product quantity"
+            />
+            @if (createProductForm.get('quantity')?.invalid && createProductForm.get('quantity')?.touched) {
+              <div class="text-danger">Quantity is required and must be a number.</div>
+            }
+          </div>
+          <div class="col-md-6">
+            <label for="isAvailable" class="form-label">Availability</label>
+            <select
+              id="isAvailable"
+              formControlName="isAvailable"
+              class="form-select"
+            >
+              <option [value]="true">Available</option>
+              <option [value]="false">Not Available</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              id="description"
+              formControlName="description"
+              class="form-control"
+              rows="3"
+              placeholder="Enter product description"
+            ></textarea>
+          </div>
+        </div>
+  
+        <button
+          type="submit"
+          class="btn btn-primary w-100"
+          (click)="onSubmit()"
+          [disabled]="createProductForm.invalid"
+        >
+          Create Product
+        </button>
+      </form>
+    } @else {
+      <p class="text-center text-danger">Form could not be loaded.</p>
+    }
+  </div>
+  

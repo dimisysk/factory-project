@@ -1,1 +1,72 @@
-<p>product-read works!</p>
+<div class="container">
+    <h2 class="text-center">Products</h2>
+  
+    <!-- Form for Filters -->
+    <form [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Brand</mat-label>
+            <input matInput formControlName="brand" placeholder="Enter brand">
+          </mat-form-field>
+        </div>
+  
+        <div class="col-md-3">
+          <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+              <mat-option value="" disabled>Select a category</mat-option>
+              <mat-option value="Electronics">Electronics</mat-option>
+              <mat-option value="Clothing">Clothing</mat-option>
+              <mat-option value="Home Appliances">Home Appliances</mat-option>
+              <mat-option value="Books">Books</mat-option>
+              <mat-option value="Toys">Toys</mat-option>
+              <mat-option value="Beauty Products">Beauty Products</mat-option>
+              <mat-option value="Sports Equipment">Sports Equipment</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+  
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Min Price</mat-label>
+            <input matInput type="number" formControlName="minPrice" placeholder="Minimum Price">
+          </mat-form-field>
+        </div>
+  
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Max Price</mat-label>
+            <input matInput type="number" formControlName="maxPrice" placeholder="Maximum Price">
+          </mat-form-field>
+        </div>
+  
+        <div class="col-md-3">
+          <mat-label></mat-label>
+          <mat-checkbox formControlName="isAvailable">Only Available</mat-checkbox>
+        </div>
+      </div>
+  
+      <button mat-raised-button color="primary" type="submit">Apply Filters</button>
+    </form>
+  
+    <!-- Products List -->
+    <div class="products mt-4">
+      <div *ngIf="products.length > 0" class="row">
+        <div *ngFor="let product of products" class="col-md-3 mb-4">
+          <div class="card">
+            <img [src]="product.image || 'placeholder.jpg'" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text"><strong>{{ product.price | currency }}</strong></p>
+              <button mat-raised-button color="accent" (click)="viewProduct(product)">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p *ngIf="products.length === 0" class="text-center">No products found.</p>
+    </div>
+  </div>
+  

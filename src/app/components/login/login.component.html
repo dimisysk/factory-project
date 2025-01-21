@@ -1,1 +1,59 @@
-<p>login works!</p>
+<h4>User Login</h4>
+<div class="d-flex justify-content-center align-items-center">
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-2 w-25 max-height-100">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="username" />
+      @if (form.get('username')?.errors?.['required'] && form.get('username')?.touched) {
+        <small class="text-danger">Username is required.</small>
+      }
+      @if (form.get('username')?.errors?.['minlength'] && form.get('username')?.touched) {
+        <small class="text-danger">Username must be at least 4 characters long.</small>
+      }
+      @if (form.get('username')?.errors?.['maxlength'] && form.get('username')?.touched) {
+        <small class="text-danger">Username must not exceed 20 characters.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        formControlName="password" />
+      @if (form.get('password')?.errors?.['required'] && form.get('password')?.touched) {
+        <small class="text-danger">Password is required.</small>
+      }
+      @if (form.get('password')?.errors?.['pattern'] && form.get('password')?.touched) {
+        <small class="text-danger">
+          Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character.
+        </small>
+      }
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+
+    @if (invalidLogin) {
+      <div class="alert alert-danger">
+        <div>
+          <strong>Error</strong>
+          Invalid username or password
+          <strong>Click </strong>
+          <a
+            role="button"
+            routerLink="/registration">
+            here
+          </a>
+          to register
+        </div>
+      </div>
+    }
+  </form>
+</div>

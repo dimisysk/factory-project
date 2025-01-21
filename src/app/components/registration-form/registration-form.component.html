@@ -1,1 +1,218 @@
-<p>registration-form works!</p>
+<h4 class="text-center mb-4">User Registration</h4>
+
+<div class="d-flex justify-content-center align-items-center" style="max-height: 100vh;">
+
+
+
+  @if (registrationStatus.message === "Not attempted yet") {
+    <form
+      [formGroup]="form"
+      class="d-flex flex-column w-25 justify-content-center">
+
+      
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          (blur)="checkDuplicateUsername()"
+          formControlName="username" />
+        @if (form.get("username").hasError("duplicateUsername")) {
+          <mat-error>Username is already registered</mat-error>
+        } @else if (
+          form.get("username").hasError("required") && form.get("username").touched
+        ) {
+          <mat-error>Email is missing or invalid</mat-error>
+        } @else if (form.get("username").hasError("pattern")) {
+          <mat-error>Please enter a valid username address</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="d-flex gap-3">
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            #passwordInput />
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="
+              passwordInput.type =
+                passwordInput.type === 'password' ? 'text' : 'password'
+            ">
+            <mat-icon>
+              {{
+                passwordInput.type === "password" ? "visibility_off" : "visibility"
+              }}
+            </mat-icon>
+          </button>
+          @if (form.get("password")?.invalid && form.get("password")?.touched) {
+            <mat-error>Password is missing or invalid</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="confirmPassword"
+            #confirmPasswordInput />
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="
+              confirmPasswordInput.type =
+                confirmPasswordInput.type === 'password' ? 'text' : 'password'
+            ">
+            <mat-icon>
+              {{
+                confirmPasswordInput.type === "password"
+                  ? "visibility_off"
+                  : "visibility"
+              }}
+            </mat-icon>
+          </button>
+          @if (form.get("confirmPassword").hasError("passwordMismatch")) {
+            <mat-error>Passwords do not match</mat-error>
+          } @else if (
+            form.get("confirmPassword").invalid &&
+            form.get("confirmPassword").touched
+          ) {
+            <mat-error>Confirmed Password is missing or invalid</mat-error>
+          }
+        </mat-form-field>
+
+      </div>
+
+      <div class="d-flex gap-3">
+        <mat-form-field>
+          <mat-label>Firstname</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="firstName" />
+          @if (form.get("firstName").invalid && form.get("firstName").touched) {
+            <mat-error>Firstname is required</mat-error>
+          }
+        </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Lastname</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="lastName" />
+          @if (form.get("lastName").invalid && form.get("lastName").touched) {
+            <mat-error>Lastname is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      
+      <div class="d-flex gap-3">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="email" />
+       @if (form.get("email").invalid && form.get("email").touched) {
+            <mat-error>Email is required</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="flex-fill">
+          <mat-label>SSN</mat-label>
+          <input matInput type="text" formControlName="ssn" />
+          @if (form.get("ssn").invalid && form.get("ssn").touched) {
+            <mat-error>SSN is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="d-flex gap-3">
+        <mat-form-field class="flex-fill">
+          <mat-label>City</mat-label>
+          <input matInput type="text" formControlName="city" />
+          @if (form.get("city").invalid && form.get("city").touched) {
+            <mat-error>City is required</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="flex-fill">
+          <mat-label>ZIP</mat-label>
+          <input matInput type="text" formControlName="zip" />
+          @if (form.get("zip").invalid && form.get("zip").touched) {
+            <mat-error>ZIP is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="d-flex gap-3">
+        <mat-form-field class="flex-fill">
+          <mat-label>Address</mat-label>
+          <input matInput type="text" formControlName="address" />
+          @if (form.get("address").invalid && form.get("address").touched) {
+            <mat-error>Address is required</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="flex-fill">
+          <mat-label>Address Number</mat-label>
+          <input matInput type="text" formControlName="addressNumber" />
+          @if (
+            form.get("addressNumber").invalid &&
+            form.get("addressNumber").touched
+          ) {
+            <mat-error>Address Number is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="d-flex gap-3">
+        <mat-form-field class="flex-fill">
+          <mat-label>Phone</mat-label>
+          <input matInput type="text" formControlName="phone" />
+          @if (form.get("phone").invalid && form.get("phone").touched) {
+            <mat-error>Phone is required</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="flex-fill">
+          <mat-label>Discound number</mat-label>
+          <input matInput type="text" formControlName="discountCardNumber" />
+          @if (
+            form.get("discountCardNumber").invalid &&
+            form.get("discountCardNumber").touched
+          ) {
+            <mat-error>Discound number is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="d-flex gap-3">
+        <mat-form-field class="flex-fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="MALE">Male</mat-option>
+            <mat-option value="FEMALE">Female</mat-option>
+            <mat-option value="OTHER">Other</mat-option>
+          </mat-select>
+          @if (form.get("gender").invalid && form.get("gender").touched) {
+            <mat-error>Gender is required</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="form.invalid"
+        (click)="onSubmit(form.value)">
+        Register
+      </button>
+    </form>
+}
+
+</div>
+
+

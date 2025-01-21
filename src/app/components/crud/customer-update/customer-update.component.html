@@ -1,1 +1,186 @@
-<p>customer-update works!</p>
+<form (ngSubmit)="onSubmit()" #customerForm="ngForm" class="container mt-3">
+    <!-- Πεδίο ID (Read-Only) -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="id" class="form-label">Customer ID</label>
+        <input
+          type="text"
+          id="id"
+          [(ngModel)]="customer.id"
+          name="id"
+          class="form-control"
+          readonly
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="discountCardNumber" class="form-label">Discount Card Number</label>
+        <input
+          type="text"
+          id="discountCardNumber"
+          [(ngModel)]="customer.discountCardNumber"
+          name="discountCardNumber"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          [(ngModel)]="customer.user.firstName"
+          name="firstName"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          [(ngModel)]="customer.user.lastName"
+          name="lastName"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="customer.user.email"
+          name="email"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone</label>
+        <input
+          type="text"
+          id="phone"
+          [(ngModel)]="customer.user.phone"
+          name="phone"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="address" class="form-label">Address</label>
+        <input
+          type="text"
+          id="address"
+          [(ngModel)]="customer.user.address"
+          name="address"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="addressNumber" class="form-label">Address Number</label>
+        <input
+          type="text"
+          id="addressNumber"
+          [(ngModel)]="customer.user.addressNumber"
+          name="addressNumber"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  
+   
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="city" class="form-label">City</label>
+        <input
+          type="text"
+          id="city"
+          [(ngModel)]="customer.user.city"
+          name="city"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="zip" class="form-label">ZIP</label>
+        <input
+          type="text"
+          id="zip"
+          [(ngModel)]="customer.user.zip"
+          name="zip"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  
+    
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="role" class="form-label">Role</label>
+        <select
+          id="role"
+          [(ngModel)]="customer.user.role"
+          name="role"
+          class="form-select"
+          required
+        >
+          <option value="CUSTOMER">Customer</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="isActive" class="form-label">Active Status</label>
+        <select
+          
+          id="isActive"
+          [(ngModel)]="customer.user.isActive"
+          name="isActive"
+          class="form-select"
+          required
+          >
+          <option [value]="true">Active</option>
+          <option [value]="false">No Active</option>
+        </select>
+      
+      </div>
+      
+      <div class="col-md-4">
+        <label for="gender" class="form-label">Gender</label>
+        <select
+          id="gender"
+          [(ngModel)]="customer.user.gender"
+          name="gender"
+          class="form-select"
+          required
+        >
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
+          <option value="OTHER">Other</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-secondary w-100" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+  

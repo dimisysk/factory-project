@@ -1,1 +1,14 @@
-<p>product-details works!</p>
+<h2 mat-dialog-title class="text-center">{{ data.name }}</h2>
+<div mat-dialog-content class="dialog-content text-center">
+  <img [src]="data.image || 'placeholder.jpg'" alt="{{ data.name }}" class="img-fluid mb-3">
+  <p><strong>Brand:</strong> {{ data.brand }}</p>
+  <p><strong>Category:</strong> {{ data.category }}</p>
+  <p><strong>Description:</strong> {{ data.description }}</p>
+  <p><strong>Price:</strong> {{ data.price | currency }}</p>
+  <p><strong>Availability:</strong> {{ data.isAvailable ? 'In Stock' : 'Out of Stock' }}</p>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-center">
+  <button mat-button color="primary" (click)="addToCart(data)">Add to Cart</button>
+  <button mat-button color="warn" (click)="closeCart()">Close</button>
+
+</div>

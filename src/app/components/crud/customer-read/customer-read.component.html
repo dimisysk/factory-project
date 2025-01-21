@@ -1,1 +1,61 @@
-<p>customer-read works!</p>
+<table class="table table-bordered table-striped text-wrap">
+    <thead>
+      <tr class="align-middle text-center small">
+        <th role="button" (click)="sortData('id')">ID {{ sortSign("id") }}</th>
+        <th role="button" (click)="sortData('username')">
+          Username {{ sortSign("username") }}
+        </th>
+        <th role="button" (click)="sortData('firstName')">
+          First Name {{ sortSign("firstName") }}
+        </th>
+        <th role="button" (click)="sortData('lastName')">
+          Last Name {{ sortSign("lastName") }}
+        </th>
+        <th role="button" (click)="sortData('email')">
+          Email {{ sortSign("email") }}
+        </th>
+        <th role="button" (click)="sortData('phone')">
+          Phone {{ sortSign("phone") }}
+        </th>
+        <th role="button" (click)="sortData('isActive')">
+          Is active {{ sortSign("isActive") }}
+        </th>
+        <th role="button" (click)="sortData('ssn')">Ssn {{ sortSign("ssn") }}</th>
+        <th role="button" (click)="sortData('discountCardNumber')">
+          Discount number {{ sortSign("discountCardNumber") }}
+        </th>
+  
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (customer of customers; track customer) {
+        <tr class="align-middle">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.user.username }}</td>
+          <td>{{ customer.user.firstName }}</td>
+          <td>{{ customer.user.lastName }}</td>
+          <td>{{ customer.user.email }}</td>
+          <td>{{ customer.user.phone }}</td>
+          <td>{{ customer.user.isActive }}</td>
+          <td>{{ customer.user.ssn }}</td>
+          <td>{{ customer.discountCardNumber }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              (click)="editCustomer(customer)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="deleteCustomer(customer.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  

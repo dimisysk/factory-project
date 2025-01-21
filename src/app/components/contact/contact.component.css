@@ -1,0 +1,87 @@
+.contact-container {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-container h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .contact-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+  }
+  
+  .contact-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .contact-container li {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+    color: #222;
+    word-wrap: break-word; /* Handles long text on small screens */
+  }
+  
+  .contact-container li strong {
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .contact-container a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contact-container a:hover {
+    color: #0056b3;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .contact-container h1 {
+      font-size: 2rem;
+    }
+  
+    .contact-container p {
+      font-size: 1rem;
+    }
+  
+    .contact-container li {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-container {
+      padding: 1rem;
+    }
+  
+    .contact-container h1 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-container p {
+      font-size: 0.9rem;
+    }
+  
+    .contact-container li {
+      font-size: 0.9rem;
+    }
+  }
+  
