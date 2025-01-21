@@ -33,14 +33,14 @@
     display: flex;
     gap: 15px;
     flex: 1; /* Equal space allocation */
-    justify-content: center; /* Center align on small screens */
-    margin-bottom: 10px; /* Add spacing for wrap */
+    justify-content: start; /* Center align on small screens */
+    margin-bottom: 5px; /* Add spacing for wrap */
   }
   
   .footer-links a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 20px;
   }
   
   .footer-links a:hover {
@@ -52,23 +52,23 @@
     gap: 15px;
     justify-content: center;
     flex: 1; /* Equal space allocation */
-    margin-bottom: 10px; /* Add spacing for wrap */
+    margin-bottom: 5px; /* Add spacing for wrap */
   }
   
   .footer-social a {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .footer-social a:hover {
-    color: #007bff;
+    color: rgb(25, 205, 166);
   }
   
   .footer-copyright {
     font-size: 14px;
-    text-align: center;
+    text-align: end;
     flex: 1; /* Equal space allocation */
-    margin-top: 10px; /* Add spacing for wrap */
+    margin-top: 5px; /* Add spacing for wrap */
   }
   
   /* Responsive Styling */
