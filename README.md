@@ -1,59 +1,44 @@
-# FronendProject
+Οδηγίες για την Εκκίνηση και Διαχείριση του Angular Front-End
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+## 1: Απαιτήσεις Συστήματος:
 
-## Development server
+- Εγκατεστημένο Node.js (συνιστάται η τελευταία LTS έκδοση).
+- Εγκατεστημένο Angular CLI (npm install -g @angular/cli).
 
-To start a local development server, run:
+## 2: Βήματα για την Εκκίνηση:
 
-```bash
-ng serve
-```
+- Clone του Repository:
+  ```bash
+  git clone <URL ΤΟΥ REPOSITORY>
+  ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Εγκατάσταση των Εξαρτήσεων: 
+  ```bash
+  npm install
+  ```
+  Αυτό θα εγκαταστήσει όλες τις απαραίτητες βιβλιοθήκες που περιλαμβάνονται στο package.json.
+- Εκκίνηση της Εφαρμογής: Για να εκκινήσετε την εφαρμογή σε λειτουργία ανάπτυξης:
+    ```bash
+  ng serve
+  ```
+  Ανοίξτε τον browser στη διεύθυνση: http://localhost:4200.
 
-## Code scaffolding
+## 3: Σημειώσεις για τον Χρήστη:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Για να διασφαλιστεί ότι το front-end επικοινωνεί σωστά με το backend, ελέγξτε ότι το backend εκτελείται στη σωστή πόρτα (π.χ., 8080).
+- Οι ενέργειες όπως η δημιουργία, ενημέρωση και διαγραφή δεδομένων απαιτούν σωστά tokens που δημιουργούνται κατά την είσοδο του χρήστη.
 
-```bash
-ng generate component component-name
-```
+## 4: Εντολές Παραγωγής:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Για να χτίσετε την εφαρμογή για παραγωγή, εκτελέστε:
+     ```bash
+  ng build --prod
+  ```
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  ## 5: Συντήρηση: 
+  - Για την εγκατάσταση νέων πακέτων:
+     ```bash
+  npm install <PACKAGE_NAME>
+  ```
+  ## 6: Τελικός Έλεγχος: 
+    Βεβαιωθείτε ότι όλα τα endpoints του backend είναι διαθέσιμα και οι λειτουργίες όπως η σύνδεση και η εγγραφή λειτουργούν κανονικά πριν την υποβολή.
