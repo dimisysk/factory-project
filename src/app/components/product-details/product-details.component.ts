@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog'
 import { CommonModule } from '@angular/common';
+import { CartService } from 'src/app/shared/service/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,11 +14,12 @@ export class ProductDetailsComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private dialogRef: MatDialogRef<ProductDetailsComponent>
+    private dialogRef: MatDialogRef<ProductDetailsComponent>,
+    private cartService: CartService
   ) {}
 
   addToCart(product: any): void {
-    console.log('Added to cart:', product);
+    this.cartService.addToCart(product);
     this.dialogRef.close();
   }
 

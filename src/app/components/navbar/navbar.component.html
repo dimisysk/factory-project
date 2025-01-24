@@ -3,7 +3,6 @@
     <a class="navbar-brand ms-5" routerLink="home">Home</a>
     <a class="navbar-brand ms-5" routerLink="registration">Sign Up</a>
 
-    <!-- Button for small screens -->
     <button
       class="navbar-toggler"
       type="button"
@@ -16,14 +15,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Collapsible Menu -->
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
-        <!-- Dynamic Menu Items -->
         @if (user()) {
           <li class="nav-item d-flex align-items-center text-light me-3 gap-2">
             <span>Welcome, {{ user().username }}</span>
             <mat-icon role="button" (click)="logout()">logout</mat-icon>
+          </li>
+          <li class="nav-item d-flex align-items-center text-light me-3 gap-2">
+            <a
+              role="button"
+              class="text-light text-decoration-none"
+              routerLink="/cart"
+            >
+              Cart
+            </a>
+            <mat-icon role="button" class="icon-link-hover" routerLink="/cart">
+              shopping_cart
+            </mat-icon>
           </li>
         } @else {
           <li class="nav-item d-flex align-items-center text-light me-3 gap-2">

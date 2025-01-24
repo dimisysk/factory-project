@@ -1,1 +1,44 @@
-<p>cart works!</p>
+<div class="container mt-5">
+    <h2 class="text-center">Your Cart</h2>
+  
+    <!-- Εμφάνιση μηνύματος αν το καλάθι είναι άδειο -->
+    @if (cartItems.length === 0) {
+      <div class="text-center">
+        <p>Your cart is empty.</p>
+      </div>
+    } @else {
+      <!-- Πίνακας με τα προϊόντα στο καλάθι -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of cartItems; track item) {
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.price | currency }}</td>
+              <td>1</td>
+              <td>{{ item.category }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="removeFromCart(item)">
+                  Remove
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+  
+      <!-- Κουμπί για ολοκλήρωση παραγγελίας -->
+      <div class="text-center mt-3">
+        <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+      </div>
+    }
+  </div>
+  

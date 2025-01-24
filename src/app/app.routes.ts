@@ -14,6 +14,7 @@ import { CustomerUpdateComponent } from './components/crud/customer-update/custo
 import { CustomerReadComponent } from './components/crud/customer-read/customer-read.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 import { LearnMoreComponent } from './components/learn-more/learn-more.component';
+import { CartComponent } from './components/cart/cart.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +39,7 @@ export const routes: Routes = [
     component: ProductReadComponent,
     canActivate: [customerOrAdminGuard],
   },
+  { path: 'cart', component: CartComponent, canActivate: [customerOrAdminGuard] },
   {
     path: 'customers/update/:id',
     component: CustomerUpdateComponent,
