@@ -22,13 +22,33 @@ export class CartComponent {
     this.cartService.clearCart();
     this.cartItems = [];
   }
+  
 
-  removeFromCart(item: any): void {
-    const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
-    if (index > -1) {
-      this.cartItems.splice(index, 1);
-      console.log(`Removed ${item.name} from cart.`);
-    }
+addToCart(item: any): void {
+  const existingItem = this.cartItems.find(cartItem => cartItem.id === item.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    this.cartItems.push({ ...item, quantity: 1 }); // Ορίζουμε την αρχική ποσότητα ως 1
   }
+  console.log('Added to cart:', this.cartItems);
+}
+
+removeFromCart(item: any): void {
+  this.cartService.removeFromCart(item);
+  this.cartItems = this.cartService.getCartItems(); // Ενημέρωση του καλαθιού στο UI
+}
+
+increaseQuantity(item: any): void {
+  item.quantity += 1; // Αυξάνουμε την ποσότητα
+}
+
+decreaseQuantity(item: any): void {
+  if (item.quantity > 1) {
+    item.quantity -= 1; // Μειώνουμε την ποσότητα
+  } else {
+    this.removeFromCart(item); // Αν η ποσότητα είναι 1, αφαιρούμε το προϊόν
+  }
+}
   
 }

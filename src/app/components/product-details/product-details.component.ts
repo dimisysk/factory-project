@@ -18,14 +18,16 @@ export class ProductDetailsComponent {
     private cartService: CartService
   ) {}
 
+  
+
   addToCart(product: any): void {
-    this.cartService.addToCart(product);
-    this.dialogRef.close();
+    this.cartService.addToCart(product); 
+    this.dialogRef.close(); 
   }
 
   closeCart(): void {
     console.log('Dialog closed');
-    this.dialogRef.close(); // Κλείνει τον διάλογο
+    this.dialogRef.close(); 
   }
 
 }
