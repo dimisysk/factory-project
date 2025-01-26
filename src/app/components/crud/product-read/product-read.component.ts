@@ -38,23 +38,23 @@ export class ProductReadComponent implements OnInit {
     private dialog: MatDialog
   ) {
     this.filtersForm = this.fb.group({
-      brand: [''], // Προαιρετικό φίλτρο brand
-      category: [''], // Προαιρετικό φίλτρο category
-      minPrice: [null, [Validators.min(0)]], // Φίλτρο για ελάχιστη τιμή
-      maxPrice: [null, [Validators.min(0)]], // Φίλτρο για μέγιστη τιμή
-      isAvailable: [true], // Προεπιλογή: true
+      brand: [''], 
+      category: [''], 
+      minPrice: [null, [Validators.min(0)]], 
+      maxPrice: [null, [Validators.min(0)]], 
+      isAvailable: [true], 
     });
   }
   ngOnInit(): void {
     this.fetchProducts();
   }
   fetchProducts(): void {
-    const filters = this.filtersForm.value; // Λαμβάνουμε τα φίλτρα από τη φόρμα
+    const filters = this.filtersForm.value; 
   
     this.productService.getProducts(filters).subscribe({
       next: (products) => {
         this.products = products;
-        this.error = null; // Καθαρίζουμε τα σφάλματα αν η ανάκτηση είναι επιτυχής
+        this.error = null; 
       },
       error: (err) => {
         console.error('Error fetching products:', err);

@@ -1,7 +1,6 @@
 <div class="container">
     <h2 class="text-center">Products</h2>
   
-    <!-- Form for Filters -->
     <form [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
       <div class="row">
         <div class="col-md-3">
@@ -51,15 +50,14 @@
       <button mat-raised-button color="primary" type="submit">Apply Filters</button>
     </form>
   
-    <!-- Products List -->
     <div class="products mt-4">
       <div *ngIf="products.length > 0" class="row">
         <div *ngFor="let product of products" class="col-md-3 mb-4">
           <div class="card">
             <img [src]="product.image || 'placeholder.jpg'" class="card-img-top" alt="{{ product.name }}">
             <div class="card-body">
-              <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">{{ product.description }}</p>
+              <h5 class="card-title text-truncate">{{ product.name }}</h5>
+              <p class="card-text description multiline">{{ product.description }}</p>
               <p class="card-text"><strong>{{ product.price | currency }}</strong></p>
               <button mat-raised-button color="accent" (click)="viewProduct(product)">View Details</button>
             </div>
@@ -68,5 +66,5 @@
       </div>
       <p *ngIf="products.length === 0" class="text-center">No products found.</p>
     </div>
-  </div>
+    
   

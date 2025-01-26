@@ -9,9 +9,9 @@ export class CartService {
   addToCart(product: any): void {
     const existingItem = this.cartItems.find((item) => item.id === product.id);
     if (existingItem) {
-      existingItem.quantity += 1; // Αυξάνουμε την ποσότητα κατά 1
+      existingItem.quantity += 1; 
     } else {
-      this.cartItems.push({ ...product, quantity: 1 }); // Αρχικοποίηση με ποσότητα 1
+      this.cartItems.push({ ...product, quantity: 1 }); 
     }
     console.log('Cart items:', this.cartItems);
   }

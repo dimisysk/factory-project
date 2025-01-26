@@ -1,4 +1,3 @@
-/* Ensure proper spacing for navbar links */
 .navbar-nav .nav-item {
     margin-bottom: 10px;
   }
@@ -8,11 +7,11 @@
   }
   
   .icon-link-hover:hover {
-    color: #ffd700; /* Highlight on hover */
+    color: #ffd700; 
     cursor: pointer;
   }
   
-  /* Responsive Adjustments */
+  
   @media (max-width: 768px) {
     .navbar-brand {
       margin-bottom: 10px;

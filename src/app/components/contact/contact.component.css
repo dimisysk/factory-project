@@ -1,12 +1,12 @@
 .contact-container {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: #8f71711c;
   }
   
   .contact-container h1 {

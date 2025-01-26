@@ -77,7 +77,7 @@ export class CustomerReadComponent implements OnInit {
   
 
   editCustomer(customer: CustomerReadOnlyDTO): void {
-    // Ανακατεύθυνση στη φόρμα επεξεργασίας με βάση το customer.id
+   
     this.router.navigate(['/customers/update/', customer.id]);
   }
 

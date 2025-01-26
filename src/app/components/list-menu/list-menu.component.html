@@ -1,0 +1,23 @@
+<ul class="list-group">
+    @if (authService.user()?.role === "CUSTOMER" || authService.user()?.role === "ADMIN") {
+      <li class="list-group-item">
+        <a routerLink="/customer/dashboard" routerLinkActive="active">Store</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/product/all" routerLinkActive="active">All Products</a>
+      </li>
+    }
+  
+    @if (authService.user()?.role === "ADMIN") {
+      <li class="list-group-item">
+        <a routerLink="/product/create" routerLinkActive="active">Create Product</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/customers/update/:id" routerLinkActive="active">Update Customer</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/customer/get-all" routerLinkActive="active">Get All Customers</a>
+      </li>
+    }
+  </ul>
+  

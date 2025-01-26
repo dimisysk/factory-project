@@ -29,25 +29,25 @@ addToCart(item: any): void {
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    this.cartItems.push({ ...item, quantity: 1 }); // Ορίζουμε την αρχική ποσότητα ως 1
+    this.cartItems.push({ ...item, quantity: 1 }); 
   }
   console.log('Added to cart:', this.cartItems);
 }
 
 removeFromCart(item: any): void {
   this.cartService.removeFromCart(item);
-  this.cartItems = this.cartService.getCartItems(); // Ενημέρωση του καλαθιού στο UI
+  this.cartItems = this.cartService.getCartItems(); 
 }
 
 increaseQuantity(item: any): void {
-  item.quantity += 1; // Αυξάνουμε την ποσότητα
+  item.quantity += 1; 
 }
 
 decreaseQuantity(item: any): void {
   if (item.quantity > 1) {
-    item.quantity -= 1; // Μειώνουμε την ποσότητα
+    item.quantity -= 1; 
   } else {
-    this.removeFromCart(item); // Αν η ποσότητα είναι 1, αφαιρούμε το προϊόν
+    this.removeFromCart(item); 
   }
 }
   

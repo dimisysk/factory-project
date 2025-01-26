@@ -15,7 +15,7 @@ import { FormControl, FormsModule,ReactiveFormsModule } from '@angular/forms';
 export class CustomerUpdateComponent {
 
   customer: CustomerInsertDTO = {
-    id: 0, // Αρχικοποίηση του ID με 0 ή null αν προτιμάς
+    id: 0, 
     user: {
       username: '',
       password: '',

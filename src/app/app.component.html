@@ -1,13 +1,22 @@
 <div class="app-container">
-  <!-- Σταθερό Navbar -->
   <app-navbar></app-navbar>
-  <app-crud-navbar></app-crud-navbar>
 
-  <!-- Κύριο Περιεχόμενο -->
-  <div class="content-container">
-    <router-outlet></router-outlet>
+
+  <div class="d-flex flex-row gap-2 main-content">
+    <!-- Αν υπάρχει χρήστης, εμφανίζεται το ListMenu -->
+    @if (authService.user()) {
+      <app-list-menu class="w-25 sidebar"></app-list-menu>
+      <div class="flex-grow-1 p-2 text-nowrap w-75">
+        <router-outlet></router-outlet>
+      </div>
+    } @else {
+      <!-- Αν δεν υπάρχει χρήστης, το περιεχόμενο γεμίζει όλη την οθόνη -->
+      <div class="flex-grow-1 p-2 text-nowrap w-100">
+        <router-outlet></router-outlet>
+      </div>
+    }
   </div>
+  
 
-  <!-- Σταθερό Footer -->
   <app-footer></app-footer>>
 </div>

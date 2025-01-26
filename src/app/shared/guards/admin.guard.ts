@@ -9,9 +9,9 @@ export const adminGuard: CanActivateFn = (route, state) => {
 
   const decodedToken = authService.decodeToken();
   if (decodedToken?.role === 'ADMIN') {
-    return true; // Επιτρέπεται η πρόσβαση
+    return true; 
   } else {
-    router.navigate(['/not-authorized']); // Ανακατεύθυνση αν δεν είναι `ADMIN`
+    router.navigate(['/not-authorized']); 
     return false;
   }
 };

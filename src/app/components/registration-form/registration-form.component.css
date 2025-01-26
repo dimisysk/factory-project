@@ -1,0 +1,10 @@
+.container {
+background-image: url('/assets/images/sidebar.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}

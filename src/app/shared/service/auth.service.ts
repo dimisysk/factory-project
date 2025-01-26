@@ -48,10 +48,10 @@ export class AuthService {
         const token = localStorage.getItem("jwtToken")
         if (token) {
           try {
-            const decodedToken = jwtDecode<any>(token); // Αποκωδικοποίηση του token
+            const decodedToken = jwtDecode<any>(token); 
             return {
-              sub: decodedToken.sub, // Το subject (username)
-              role: decodedToken.role, // Το role από τις claims
+              sub: decodedToken.sub, 
+              role: decodedToken.role, 
             };
           } catch (error) {
             console.error('Invalid token format:', error);
@@ -81,7 +81,7 @@ export class AuthService {
               username: credentials.username,
               role: decodedToken.role || 'CUSTOMER',
             });
-            this.userId = response.id; // Αποθηκεύουμε το ID
+            this.userId = response.id; 
           })
         );
       }
@@ -100,11 +100,11 @@ export class AuthService {
     localStorage.removeItem('jwtToken');
     this.user.set(null);
     this.router.navigate(['home']);
-    this.userId = null; // Καθαρίζουμε το ID
+    this.userId = null; 
     this.router.navigate(['login']);
   }
   getUserId(): number | null {
-    // Επιστρέφει το ID του χρήστη που είναι αποθηκευμένο στη μνήμη
+    
     return this.userId;
   }
 

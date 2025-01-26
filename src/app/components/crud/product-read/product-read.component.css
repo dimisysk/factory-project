@@ -1,0 +1,20 @@
+.card-title {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .card-text.description {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .card-text.description.multiline {
+    white-space: normal; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    -webkit-line-clamp: 2; 
+  }
+  
