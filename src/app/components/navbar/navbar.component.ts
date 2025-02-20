@@ -1,13 +1,13 @@
 import { Component, inject, Inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/shared/service/auth.service'; 
 import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone:true,
-  imports: [MatIconModule,RouterLink,RouterOutlet],
+  imports: [MatIconModule,RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

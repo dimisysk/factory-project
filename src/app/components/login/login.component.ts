@@ -33,6 +33,7 @@ export class LoginComponent {
   });
 
   onSubmit() {
+    
     const credentials = this.form.value as Credentials;
     if (credentials) {
       this.authService.login(credentials).subscribe({
@@ -47,6 +48,13 @@ export class LoginComponent {
               username: decodedToken.sub,
               role: decodedToken.role,
             });
+
+            if (!this.authService.user()) {
+              this.authService.user.set({
+                username: decodedToken.sub,
+                role: decodedToken.role,
+              });
+            }
 
             if (decodedToken.role === 'CUSTOMER') {
               console.log('Navigating to /customer-dashboard');

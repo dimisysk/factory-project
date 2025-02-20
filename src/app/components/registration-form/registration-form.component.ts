@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import { CustomersService } from 'src/app/shared/service/customer.service';
 import { UserService } from 'src/app/shared/service/user.service';
@@ -27,8 +27,7 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     MatSelectModule,
     MatOptionModule,
-    CommonModule,
-    RouterLink,
+    CommonModule
   ],
   templateUrl: './registration-form.component.html',
   styleUrl: './registration-form.component.css',
