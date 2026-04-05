@@ -98,7 +98,7 @@ Some UI flows and integrations are designed for local development and portfolio 
 
 ---
 
-### Product Browsing
+### Product Browsing & Filtering
 ![Products](screenshots/products.png)
 
 ---
@@ -108,5 +108,17 @@ Some UI flows and integrations are designed for local development and portfolio 
 
 ---
 
-### Admin Panel (Customer Management)
-![Admin](screenshots/admin.png)
+### Admin Panel
+
+#### Customer Management (Table View)
+![Admin Table](screenshots/admin-table.png)
+
+#### Update Customer (Form)
+![Update Customer](screenshots/update-customer.png)
+
+---
+
+### Product Management
+
+#### Create Product
+![Create Product](screenshots/create-product.png)
