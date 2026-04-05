@@ -111,7 +111,7 @@ Some UI flows and integrations are designed for local development and portfolio 
 ### Admin Panel
 
 #### Customer Management (Table View)
-![Admin Table](screenshots/admin-table.png)
+![Admin Table](screenshots/admin.png)
 
 #### Update Customer (Form)
 ![Update Customer](screenshots/update-customer.png)
