@@ -19,7 +19,7 @@ It communicates with a Spring Boot backend through REST APIs and provides the us
 ## Features
 - User login and authentication
 - Product browsing
-- Communication with backend REST APIs
+- Communication with backend REST APIs (Spring Boot)
 - Structured and responsive user interface
 
 ---
@@ -73,11 +73,12 @@ Some UI flows and integrations are designed for local development and portfolio 
 
 ---
 
-### Future Improvements
--Improve UI/UX consistency
--Add more robust form validation
--Improve error handling and user feedback
--Add unit and integration tests
+## Future Improvements
+
+- Improve UI/UX consistency
+- Add more robust form validation
+- Improve error handling and user feedback
+- Add unit and integration tests
 
 
 
