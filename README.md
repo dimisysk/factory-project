@@ -1,46 +1,84 @@
-Οδηγίες για την Εκκίνηση και Διαχείριση του Angular Front-End
+# E-commerce Frontend (Angular)
 
-## 1: Απαιτήσεις Συστήματος:
+## Overview
+This project is the frontend application of an e-commerce platform built with Angular.
 
-- Εγκατεστημένο Node.js (συνιστάται η τελευταία LTS έκδοση).
-- Εγκατεστημένο Angular CLI (npm install -g @angular/cli).
+It communicates with a Spring Boot backend through REST APIs and provides the user interface for authentication, product browsing, and other core application features.
 
-## 2: Βήματα για την Εκκίνηση:
+---
 
-- Clone του Repository:
-  ```bash
-  git clone <URL ΤΟΥ REPOSITORY>
-  ```
+## Technologies
+- Angular
+- TypeScript
+- HTML
+- CSS
+- REST API integration
 
-- Εγκατάσταση των Εξαρτήσεων: 
-  ```bash
-  npm install
-  ```
-  Αυτό θα εγκαταστήσει όλες τις απαραίτητες βιβλιοθήκες που περιλαμβάνονται στο package.json.
-- Εκκίνηση της Εφαρμογής: Για να εκκινήσετε την εφαρμογή σε λειτουργία ανάπτυξης:
-    ```bash
-  ng serve
-  ```
-  Ανοίξτε τον browser στη διεύθυνση: http://localhost:4200.
+---
 
-## 3: Σημειώσεις για τον Χρήστη:
+## Features
+- User login and authentication
+- Product browsing
+- Communication with backend REST APIs
+- Structured and responsive user interface
 
-- Για να διασφαλιστεί ότι το front-end επικοινωνεί σωστά με το backend, ελέγξτε ότι το backend εκτελείται στη σωστή πόρτα (π.χ., 8080).
-- Οι ενέργειες όπως η δημιουργία, ενημέρωση και διαγραφή δεδομένων απαιτούν σωστά tokens που δημιουργούνται κατά την είσοδο του χρήστη.
+---
 
-## 4: Εντολές Παραγωγής:
+## Project Structure
+The frontend is organized into Angular components and services to keep the application modular and maintainable.
 
-- Για να χτίσετε την εφαρμογή για παραγωγή, εκτελέστε:
-     ```bash
-  ng build --prod
-  ```
+- **Components** → Handle the user interface
+- **Services** → Handle API communication and business-related frontend logic
+- **Routing** → Manages navigation between application views
 
-## 5: Συντήρηση: 
-- Για την εγκατάσταση νέων πακέτων:
-     ```bash
-    npm install <PACKAGE_NAME>
+---
 
-    ```
-## 6: Τελικός Έλεγχος: 
-- Βεβαιωθείτε ότι όλα τα endpoints του backend είναι διαθέσιμα και 
-  οι λειτουργίες όπως η σύνδεση και η εγγραφή λειτουργούν κανονικά πριν την υποβολή.
+## Getting Started
+
+### Prerequisites
+- Node.js
+- npm
+- Angular CLI
+
+---
+
+### Install dependencies
+
+```bash
+npm install
+
+```
+
+### Run the application
+```bash
+ng serve
+
+```
+
+### Access the Application
+http://localhost:4200
+
+---
+
+### Backend Dependency
+This frontend application requires the backend service to be running in order to access authentication, products, and other API-based functionality.
+
+Backend repository: https://github.com/dimisysk/e-commerce
+
+---
+
+### Notes
+This project is intended for demonstration and learning purposes.
+Some UI flows and integrations are designed for local development and portfolio presentation.
+
+---
+
+### Future Improvements
+-Improve UI/UX consistency
+-Add more robust form validation
+-Improve error handling and user feedback
+-Add unit and integration tests
+
+
+
+
