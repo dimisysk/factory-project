@@ -82,6 +82,8 @@ Some UI flows and integrations are designed for local development and portfolio 
 
 
 ![Home](screenshots/home.png)
+![Login](screenshots/login.png)
+![Register](screenshots/register.png)
 
 
 
