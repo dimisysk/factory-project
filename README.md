@@ -88,12 +88,25 @@ Some UI flows and integrations are designed for local development and portfolio 
 
 ---
 
-### Login Page
+### Authentication
+
+#### Login
 ![Login](screenshots/login.png)
+
+#### Register
+![Register](screenshots/register.png)
 
 ---
 
-### Registration Page
-![Register](screenshots/register.png)
+### Product Browsing
+![Products](screenshots/products.png)
 
+---
 
+### Shopping Cart
+![Cart](screenshots/cart.png)
+
+---
+
+### Admin Panel (Customer Management)
+![Admin](screenshots/admin.png)
